@@ -1,72 +1,67 @@
-version: '3.6'
-services:
-  nginx:
-    image: nginx:latest
-    container_name: ${APP_NAME}-nginx
-    ports:
-      - '80:80'
-      - '443:443'
-    volumes:
-      - "./nginx/:/etc/nginx/templates/"
-      - ./src:/var/www/html:rw,cached
-      - ./certs:/etc/certs
-    environment:
-      - "NGINX_ENVSUBST_TEMPLATE_SUFFIX=.conf"
-      - "DOMAIN=${DOMAIN}"
-    depends_on:
-      - wordpress
-    restart: always
+version: '3'
 
-  mysql:
-    image: mariadb
-    container_name: ${APP_NAME}-mysql
-    command: --lower_case_table_names=2
-    volumes:
-       - './data/db:/var/lib/mysql:delegated'
-    environment:
-      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
-      - MYSQL_DATABASE=${DB_NAME}
-    restart: always
-    ports:
-      - '3306:3306'
-
+networks:
   wordpress:
+
+services:
+  app:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: ${APP_NAME}-wordpress
+      dockerfile: nginx.dockerfile
+    container_name: nginx
+    ports:
+      - 80:80
+      - 443:443
     volumes:
-      - ./src:/var/www/html:rw,cached
-      - ./config/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - ./src:/var/www/html:delegated
     depends_on:
+      - php
       - mysql
+    networks:
+      - wordpress
+
+  mysql:
+    image: mysql:5.7.29
+    container_name: mysql
     restart: always
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: ${APP_NAME}-phpmyadmin
-    volumes:
-      - ./config/phpmyadmin.ini:/usr/local/etc/php/conf.d/phpmyadmin.ini
+    ports:
+      - 3306:3306
     environment:
-      PMA_HOST: "${DB_HOST}"
-      PMA_PORT: 3306
-      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
-    ports:
-      - '8082:80'
-    links:
-      - mysql:mysql
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - wordpress
 
-  mailhog:
-    container_name: ${APP_NAME}-mailhog
-    image: mailhog/mailhog
-    ports:
-      - "8025:8025"
-      - "1025:1025"
+  php:
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    container_name: php
+    volumes:
+      - ./src:/var/www/html:delegated
+    networks:
+      - wordpress
 
+  wp:
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    container_name: wp
+    entrypoint: ['wp', '--allow-root']
+    volumes:
+      - ./src:/var/www/html:delegated
+    networks:
+      - wordpress
   composer:
     image: composer
-    container_name: ${APP_NAME}-composer
+    container_name: composer
     working_dir: /var/www/html
     restart: 'no'
     volumes:
       - ./src:/var/www/html:rw,cached
+    command: sh -c "composer install && cd web/app/themes/sage && composer require roots/acorn && composer install --ignore-platform-reqs"
+  

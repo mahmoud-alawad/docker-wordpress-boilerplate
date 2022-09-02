@@ -1,4 +1,4 @@
-<header class="bg-slate-600 text-white fixed top-0 w-full " x-data="{menuOpen: false}">
+<header class="bg-primary text-white fixed top-0 w-full " x-data="{menuOpen: false}">
   <div class="container flex justify-between items-center">
     <a class="w-1/12 h-full flex items-center justify-center" href="{{ home_url('/') }}">
       {!! $siteName !!}
@@ -17,7 +17,7 @@
     x-transition:leave-start="translate-x-0"
     x-transition:leave-end="translate-x-full"
     x-transition:leave="ease-out duration-400"
-    class="absolute top-0 right-0 z-40 w-screen max-w-[80%] h-screen bg-slate-500">
+    class="absolute top-0 right-0 z-40 w-screen max-w-[80%] h-screen bg-primary">
       <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
         {!! wp_nav_menu([
           'theme_location' => 'primary_navigation',

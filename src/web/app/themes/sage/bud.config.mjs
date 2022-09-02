@@ -29,12 +29,16 @@ export default async (app) => {
     /**
      * Proxy origin (`WP_HOME`)
      */
-    .proxy("https://dr.localhost")
+    .proxy("https://app.localhost") //TODO change after fork 
 
     /**
      * Development origin
      */
-    .serve("http://0.0.0.0:3000")
+    .serve({
+      host: 'localhost',
+      port: 3000,
+      ssl: false,
+    })
 
     /**
      * URI of the `public` directory

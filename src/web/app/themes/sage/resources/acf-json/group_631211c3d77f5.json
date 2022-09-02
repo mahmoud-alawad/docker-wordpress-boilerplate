@@ -1,9 +1,9 @@
 {
-    "key": "group_630f2bc60fea1",
-    "title": "Option - Head",
+    "key": "group_631211c3d77f5",
+    "title": "Option - Scripts",
     "fields": [
         {
-            "key": "field_630f2bcff4443",
+            "key": "field_631211d1eb9db",
             "label": "Head Scripts",
             "name": "head_scripts",
             "type": "textarea",
@@ -22,11 +22,11 @@
             "new_lines": ""
         },
         {
-            "key": "field_630f2ca0c76fb",
-            "label": "Footer Scripts",
-            "name": "footer_scripts",
+            "key": "field_631211e7eb9dc",
+            "label": "Bottom Body Scripts",
+            "name": "bottom_body_scripts",
             "type": "textarea",
-            "instructions": "script to be copied in bottom body HTML",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -58,5 +58,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1661938895
+    "modified": 1662128642
 }

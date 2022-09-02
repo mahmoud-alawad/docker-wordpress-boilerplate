@@ -1,6 +1,0 @@
-mysql
-.DS_Store
-.idea
-.env*
-!.env
-./nginx/certs/*

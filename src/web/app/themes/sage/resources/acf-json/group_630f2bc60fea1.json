@@ -1,0 +1,62 @@
+{
+    "key": "group_630f2bc60fea1",
+    "title": "Option - Head",
+    "fields": [
+        {
+            "key": "field_630f2bcff4443",
+            "label": "Head Scripts",
+            "name": "head_scripts",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_630f2ca0c76fb",
+            "label": "Footer Scripts",
+            "name": "footer_scripts",
+            "type": "textarea",
+            "instructions": "script to be copied in bottom body HTML",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1661938895
+}

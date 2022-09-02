@@ -134,3 +134,30 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+/**
+ * ACF settings 
+ */
+
+ add_filter('acf/settings/load_json', function($path)
+ {
+  // update path
+  $path = get_theme_file_path() . '/resources/acf-boilerplate';
+  $path = get_theme_file_path() . '/resources/acf-json';
+    
+    
+  // return
+  return $path;
+ },10,1);
+
+ add_filter('acf/settings/save_json', function($path){
+    return get_theme_file_path() . '/resources/acf-json';
+ });
+
+ /** 
+  * navs registration
+  */
+  register_nav_menus([
+    'primary_navigation' => __('Primary Navigation','sage'),
+    'footer_navigation' => __('Footer Navigation','sage'),
+  ]);

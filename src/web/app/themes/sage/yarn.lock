@@ -1630,6 +1630,18 @@
   "resolved" "https://registry.npmjs.org/@types/unist/-/unist-2.0.6.tgz"
   "version" "2.0.6"
 
+"@vue/reactivity@~3.1.1":
+  "integrity" "sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg=="
+  "resolved" "https://registry.npmjs.org/@vue/reactivity/-/reactivity-3.1.5.tgz"
+  "version" "3.1.5"
+  dependencies:
+    "@vue/shared" "3.1.5"
+
+"@vue/shared@3.1.5":
+  "integrity" "sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA=="
+  "resolved" "https://registry.npmjs.org/@vue/shared/-/shared-3.1.5.tgz"
+  "version" "3.1.5"
+
 "@webassemblyjs/ast@1.11.1":
   "integrity" "sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw=="
   "resolved" "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.11.1.tgz"
@@ -1873,6 +1885,13 @@
     "json-schema-traverse" "^1.0.0"
     "require-from-string" "^2.0.2"
     "uri-js" "^4.2.2"
+
+"alpinejs@^3.10.3":
+  "integrity" "sha512-nt/w4hLq9pPaexCsHmO5zV5Alvq4yu9n0Iclti6aV0HmiqLWH/axUb0pn8z3XVuVNcj8EOXOQw+WpwPzMzLBWg=="
+  "resolved" "https://registry.npmjs.org/alpinejs/-/alpinejs-3.10.3.tgz"
+  "version" "3.10.3"
+  dependencies:
+    "@vue/reactivity" "~3.1.1"
 
 "ansi-escapes@^5.0.0":
   "integrity" "sha512-5GFMVX8HqE/TB+FuBJGuO5XG0WrsA6ptUqoODaT/n9mmUaZFkqnBueB4leqGBCmrUHnCnC4PCZTCd0E7QQ83bA=="
@@ -2859,6 +2878,11 @@
   "resolved" "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
   "version" "1.8.1"
 
+"ev-emitter@^2.0.0", "ev-emitter@^2.1.2":
+  "integrity" "sha512-jQ5Ql18hdCQ4qS+RCrbLfz1n+Pags27q5TwMKvZyhp5hh2UULUYZUy1keqj6k6SYsdqIYjnmz7xyyEY0V67B8Q=="
+  "resolved" "https://registry.npmjs.org/ev-emitter/-/ev-emitter-2.1.2.tgz"
+  "version" "2.1.2"
+
 "eventemitter3@^4.0.0":
   "integrity" "sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw=="
   "resolved" "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.7.tgz"
@@ -3054,6 +3078,22 @@
     "locate-path" "^6.0.0"
     "path-exists" "^4.0.0"
 
+"fizzy-ui-utils@^3.0.0":
+  "integrity" "sha512-uJj38QFQiJ/KCio5tiZhwAjIbTXSIgzBCKdKVbaYfLS053F6z23Nb0o1ZoO9gnxOQWN7BCc35jsvrCtAq3gY9g=="
+  "resolved" "https://registry.npmjs.org/fizzy-ui-utils/-/fizzy-ui-utils-3.0.0.tgz"
+  "version" "3.0.0"
+
+"flickity@^3.0.0":
+  "integrity" "sha512-Xw4znhglA2LVSmka0yKmzb4+fLwXm13TuKmdG1HbUoZZL95J1ZMr4hAA3w69s+Z6q/c6CyBDM25JVwMqgF3rOg=="
+  "resolved" "https://registry.npmjs.org/flickity/-/flickity-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "ev-emitter" "^2.1.2"
+    "fizzy-ui-utils" "^3.0.0"
+    "get-size" "^3.0.0"
+    "imagesloaded" "^5.0.0"
+    "unidragger" "^3.0.0"
+
 "follow-redirects@^1.0.0":
   "integrity" "sha512-fhUl5EwSJbbl8AR+uYL2KQDxLkdSjZGR36xy46AO7cOMTrCMON6Sa28FmAnC2tRTDbd/Uuzz3aJBv7EBN7JH8A=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.6.tgz"
@@ -3123,6 +3163,11 @@
   "integrity" "sha512-BrGGraKm2uPqurfGVj/z97/zv8dPleC6x9JBNRTrDNtCkkRF4rPwrQXFgL7+I+q8QSdU4ntLQX2D7KIxSy8nGw=="
   "resolved" "https://registry.npmjs.org/get-port/-/get-port-6.1.2.tgz"
   "version" "6.1.2"
+
+"get-size@^3.0.0":
+  "integrity" "sha512-Y8aiXLq4leR7807UY0yuKEwif5s3kbVp1nTv+i4jBeoUzByTLKkLWu/HorS6/pB+7gsB0o7OTogC8AoOOeT0Hw=="
+  "resolved" "https://registry.npmjs.org/get-size/-/get-size-3.0.0.tgz"
+  "version" "3.0.0"
 
 "get-stream@^6.0.0", "get-stream@^6.0.1":
   "integrity" "sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg=="
@@ -3407,6 +3452,13 @@
   "integrity" "sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ=="
   "resolved" "https://registry.npmjs.org/ignore/-/ignore-5.2.0.tgz"
   "version" "5.2.0"
+
+"imagesloaded@^5.0.0":
+  "integrity" "sha512-/0JGSubc1MTCoDKVmonLHgbifBWHdyLkun+R/151E1c5n79hiSxcd7cB7mPXFgojYu8xnRZv7GYxzKoxW8BetQ=="
+  "resolved" "https://registry.npmjs.org/imagesloaded/-/imagesloaded-5.0.0.tgz"
+  "version" "5.0.0"
+  dependencies:
+    "ev-emitter" "^2.1.2"
 
 "import-fresh@^3.2.1":
   "integrity" "sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw=="
@@ -6017,6 +6069,13 @@
   "integrity" "sha512-5Zfuy9q/DFr4tfO7ZPeVXb1aPoeQSdeFMLpYuFebehDAhbuevLs5yxSZmIFN1tP5F9Wl4IpJrYojg85/zgyZHQ=="
   "resolved" "https://registry.npmjs.org/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-2.0.0.tgz"
   "version" "2.0.0"
+
+"unidragger@^3.0.0":
+  "integrity" "sha512-RngbGSwBFmqGBWjkaH+yB677uzR95blSQyxq6hYbrQCejH3Mx1nm8DVOuh3M9k2fQyTstWUG5qlgCnNqV/9jVw=="
+  "resolved" "https://registry.npmjs.org/unidragger/-/unidragger-3.0.1.tgz"
+  "version" "3.0.1"
+  dependencies:
+    "ev-emitter" "^2.0.0"
 
 "unified@^10.0.0":
   "integrity" "sha512-v4ky1+6BN9X3pQrOdkFIPWAaeDsHPE1svRDxq7YpTc2plkIqFMwukfqM+l0ewpP9EfwARlt9pPFAeWYhHm8X9w=="

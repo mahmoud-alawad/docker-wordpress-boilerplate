@@ -20,6 +20,10 @@
   "devDependencies": {
     "@roots/bud": "6.3.3",
     "@roots/bud-tailwindcss": "6.3.3",
-    "@roots/sage": "6.3.3"
+    "@roots/sage": "6.3.3",
+    "alpinejs": "^3.10.3"
+  },
+  "dependencies": {
+    "flickity": "^3.0.0"
   }
 }

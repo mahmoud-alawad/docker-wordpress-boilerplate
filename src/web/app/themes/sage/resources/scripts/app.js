@@ -1,4 +1,6 @@
-import {domReady} from '@roots/sage/client';
+import { domReady } from '@roots/sage/client';
+import Alpine from 'alpinejs';
+import cssVariables from './utils/cssVariables';
 
 /**
  * app.main
@@ -8,7 +10,11 @@ const main = async (err) => {
     // handle hmr errors
     console.error(err);
   }
+  document.addEventListener('alpine:init', () => {
 
+  });
+  Alpine.start();
+  cssVariables.init();
   // application code
 };
 

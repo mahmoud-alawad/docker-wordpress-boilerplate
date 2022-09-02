@@ -29,7 +29,7 @@ export default async (app) => {
     /**
      * Proxy origin (`WP_HOME`)
      */
-    .proxy("https://app.localhost")
+    .proxy("https://dr.localhost")
 
     /**
      * Development origin

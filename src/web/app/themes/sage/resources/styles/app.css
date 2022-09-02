@@ -1,3 +1,60 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+@layer base {
+    html {
+        @apply overflow-x-hidden;
+        @apply scroll-smooth;
+    }
+
+
+    :root {
+        --scrollbar: 0;
+        --window-height: 100vh;
+        --inner-viewport-w: calc(100vw- var(--scrollbar));
+        --gutter: theme('container.padding');
+        --container-max-width: 100%;
+        --container-max-width-sm: 600px;
+        --container-max-width-md: 760px;
+        --container-max-width-lg: 960px;
+        --container-max-width-xl: 1200px;
+        --container-max-width-2xl: 1440px;
+    }
+    
+    @media screen(sm) {
+        :root{
+            --container-max-width: var(--container-max-width-sm);
+        }
+    }
+    
+    @media screen(md) {
+        :root{
+            --container-max-width:  var(--container-max-width-md);
+        }
+    }
+    
+    @media screen(lg) {
+        :root{
+            --container-max-width:  var(--container-max-width-lg);
+        }
+    }
+    @media screen(xl) {
+        :root{
+            --container-max-width:  var(--container-max-width-xl);
+        }
+    }
+    @media screen('2xl') {
+        :root{
+            --container-max-width:  var(--container-max-width-2xl);
+        }
+    }
+
+}
+
+@layer components {
+    .container {
+        max-width: var(--container-max-width);
+    }
+}
